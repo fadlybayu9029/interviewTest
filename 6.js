@@ -17,9 +17,26 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let pinSuami = "34&%67@13";
+let pinSuami = '34&%67@13';
+// let pinSuami = '87&%67@3';
+// let pinSuami = 122333;
 
 // tulis code kalian disini
+let pin = '';
+
+for (let i = 0; i < pinSuami.length; i++) {
+  if (!isNaN(Number(pinSuami[i]))) {
+    pin += pinSuami[i];
+  }
+}
+
+if (Number(pinSuami)) {
+  console.log('Bukan pin suami ah!');
+} else if (pin.length < 6) {
+  console.log(`Nomor PIN ${pin} tidak valid!`);
+} else {
+  console.log(`Good, Nomor PIN ${pin} valid!`);
+}
 
 /*
 
