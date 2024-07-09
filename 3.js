@@ -16,11 +16,30 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 
 */
 
-let word = 'h$ll% w%rld @dh!m'
-let output =""
+let word = 'h$ll% w%rld @dh!m';
+// let word = 'w$lc%m$ t% h!ckt@v8 c%sm@c-f%x';
+// let word =
+//   's$l!m!t l$b!r!n b!g@ y!ng m$r!y!k!n d!n j!ng!n lup! m$ng$rj!k!n tug!s s$m%g! l!nc!r :)';
+let output = '';
 // tulis code kalian disini
 
+for (let i = 0; i < word.length; i++) {
+  if (word[i] === '!') {
+    output += 'a';
+  } else if (word[i] === '@') {
+    output += 'i';
+  } else if (word[i] === '#') {
+    output += 'u';
+  } else if (word[i] === '$') {
+    output += 'e';
+  } else if (word[i] === '%') {
+    output += 'o';
+  } else {
+    output += word[i];
+  }
+}
 
+console.log(output);
 
 /*
 contoh 1,
