@@ -39,30 +39,66 @@ let bonus = '1'
 let jumlah = 0
 let jumlah1 = 0
 
+let possResults = {
+    "`wow u got total ": {
+        50: " mean that string is highly recommended for security`",
+        25: " mean that string is recommended for security but need more number/word for perfect security`"
+    },
+    "`you got ": " this mean string is not recommended please add more number/word`"
+}
+
+const constructAnsString = (score) => {
+    let key, pos;
+
+    if (score > 50) {
+        key = "`wow u got total ";
+        pos  = 50;
+    } else  if (score > 25) {
+        key = "`wow u got total ";
+        pos = 25;
+    } else {
+        key = "`you got ";
+        return key + score + possResults[key];
+    }
+    
+    return key + score + possResults[key][pos]; 
+}
+
+const stringPower = (word, bonus) => {
+    const bonusPoint  = 10;
+    let ans = 0;
+    let bonusChars = new Set();
+    for (let char of bonus) bonusChars.add(char);
+    for (let char of word) {
+        if (bonusChars.has(char)) {
+            ans += bonusPoint;
+            continue;
+        }
+        let num = +char;
+        if (!isNaN(num)) ans += num;
+    }
+
+    return constructAnsString(ans);
+}
 
 
-/*
-contoh 1,
-input :
-let word = '1234129as@123p'
-let bonus = 'asp'
-output :
-"wow u got total 58 mean that string is highly recommended for security"
-
-
-contoh 2,
-input :
-let word = '13px@!'
-let bonus = '1'
-output :
-"you got 13 this mean string is not recommended please add more number/word"
+jumlah = stringPower(word, bonus);
+console.log(jumlah);
 
 
 
-contoh 3,
-input :
-let word = '13px@!'
-let bonus = '1px'
-output :
-"wow u got total 33 mean that string is recommended for security but need more number/word for perfect security"
-*/
+// contoh 1,
+word = '1234129as@123p'
+bonus = 'asp'
+// output :
+// "wow u got total 58 mean that string is highly recommended for security"
+jumlah = stringPower(word, bonus);
+console.log(jumlah);
+
+// contoh 3,
+word = '13px@!'
+bonus = '1px'
+// output :
+// "wow u got total 33 mean that string is recommended for security but need more number/word for perfect security"
+jumlah = stringPower(word, bonus);
+console.log(jumlah);

@@ -17,8 +17,31 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let pinSuami = "34&%67@13";
+const possOut = {
+    "Good, Nomor PIN ": " valid!",
+    "Nomor PIN ": " tidak valid!"
+}
 
+
+const validPin = (input) => {
+    if (!isNaN(+input)) return "Bukan pin suami ah!";
+    const validPinLength = 6;
+    let nanCount = 0; 
+    let pin = "";
+
+    for (let char of input) {
+        let num = +char;
+        isNaN(num) ? nanCount++ : pin += char;
+    }
+
+    let ans = pin.length === validPinLength ? "Good, Nomor PIN " : "Nomor PIN ";
+    return ans + pin + possOut[ans];
+}
+
+
+
+let pinSuami = "34&%67@13";
+console.log(validPin(pinSuami));
 // tulis code kalian disini
 
 /*
@@ -27,14 +50,18 @@ output: "Good, Nomor PIN 346713 valid!"
 
 contoh2:
 ===========
-let pinSuami = "87&%67@3";
-
+*/
+pinSuami = "87&%67@3";
+console.log(validPin(pinSuami));
+/*
 output: "Nomor PIN 87673 tidak valid!"
 
 contoh3:
 ===========
-let pinSuami = 122333;
-
+*/
+pinSuami = 122333;
+console.log(validPin(pinSuami));
+/*
 output: "Bukan pin suami ah!"
 
 */

@@ -16,9 +16,34 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 
 */
 
-let word = 'h$ll% w%rld @dh!m'
+let words = [
+    'h$ll% w%rld @dh!m',
+    'w$lc%m$ t% h!ckt@v8 c%sm@c-f%x',
+    's$l!m!t l$b!r!n b!g@ y!ng m$r!y!k!n d!n j!ng!n lup! m$ng$rj!k!n tug!s s$m%g! l!nc!r :)'
+]
 let output =""
 // tulis code kalian disini
+let map = {
+    "$": "e",
+    "%": "o",
+    "@": "i",
+    "!": "a"
+}
+
+const transformString  = (input) => {
+    let chars = input.split("");
+
+    for (let i = 0; i < chars.length; i++) {
+        let char = input[i];
+        if (map[char] !== undefined) chars[i] =map[char];
+    }
+    return chars.join("");
+}
+
+for (let word of words) {
+    output = transformString(word);
+    console.log(output);
+}
 
 
 
@@ -28,7 +53,7 @@ input :
 let word = 'h$ll% w%rld @dh!m'
 output :
 "hello world idham"
-
+'h$ll% w%rld @dh!m'
 
 contoh 2,
 input :
