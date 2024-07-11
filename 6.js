@@ -17,10 +17,25 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let pinSuami = "34&%67@13";
+let pinSuami = "87&%67@3";
 
 // tulis code kalian disini
+function cekPin(pin) {
+  let data = pin.replace(/\D/g, "");
+  if (data.length < 6) {
+    console.log(`Nomor PIN ${pin} tidak valid!`);
+  } else if (data.length === 6) {
+    console.log(`Good, Nomor PIN ${pin} valid! `);
+  } else {
+    console.log(`Nomor PIN ${pin} tidak valid! `);
+  }
 
+  if (/^\d+$/.test(data) === false) {
+    console.log("Bukan pin suami ah!");
+  }
+}
+
+cekPin(pinSuami);
 /*
 
 output: "Good, Nomor PIN 346713 valid!"

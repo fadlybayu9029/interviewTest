@@ -16,12 +16,33 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 
 */
 
-let word = 'h$ll% w%rld @dh!m'
-let output =""
+let word = "h$ll% w%rld @dh!m";
+let output = "";
 // tulis code kalian disini
 
+for (let i = 0; i < word.length; i++) {
+  switch (word[i]) {
+    case "$":
+      output += "e";
+      break;
+    case "!":
+      output += "a";
+      break;
+    case "@":
+      output += "i";
+      break;
+    case "#":
+      output += "a";
+      break;
+    case "%":
+      output += "o";
+      break;
+    default:
+      output += word[i];
+  }
+}
 
-
+console.log(output);
 /*
 contoh 1,
 input :
