@@ -34,13 +34,24 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let word = '13px@!'
-let bonus = '1'
-let jumlah = 0
-let jumlah1 = 0
+let word = "13px@!";
+let bonus = "1";
+let jumlah = 0;
+let jumlah1 = 0;
 
+for (let i = 0; i < word.length; i++) {
+  let check = isNaN(Number(word[i]));
+  let flag = false;
+  for (let j = 0; j < bonus.length; j++) {
+    jumlah += 10;
+    flag = true;
+  }
+  if (check == false && flag == false) {
+    jumlah1 += Number(wod[i]);
+  }
+}
 
-
+console.log(jumlah1 + jumlah);
 /*
 contoh 1,
 input :
