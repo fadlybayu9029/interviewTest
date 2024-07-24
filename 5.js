@@ -6,7 +6,7 @@ dengan syarat
 - variable bonus diperuntukkan number/alphabet/character yang akan mendapatkan poin bonus
 - poin bonus bernilai 10
 - jika sudah di hitung sebagai bonus tidak boleh ditambah kembali
-    ex : 
+    ex :
     let word  = '1234'
     let bonus = '1'
     maka perhitungan yang akan di hasilkan adalah 19 bukan 20 dengan perhitungan 1 adalah bonus = 10 dan 2,3, dan 4 sebagai angka biasa
@@ -34,12 +34,39 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let word = '13px@!'
-let bonus = '1'
-let jumlah = 0
-let jumlah1 = 0
+let word = "13px@!";
+let bonus = "1";
+let jumlah = 0;
+let jumlah1 = 0;
 
+const getPoint = ({ word, bonus }) => {
+  let total = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (!isNaN(word[i])) {
+      total += Number(word[i]);
+    }
+    for (let j = 0; j < bonus.length; j++) {
+      if (word[i] === bonus[j]) {
+        total += 10;
+      }
+    }
+  }
+  if (total > 50) {
+    console.log(
+      `wow u got total ${total} mean that string is highly recommended for security`
+    );
+  } else if (total > 25 <= 50) {
+    console.log(
+      `wow u got total ${total} mean that string is recommended for security but need more number/word for perfect security`
+    );
+  } else if (total < 25) {
+    console.log(
+      `you got ${total} this mean string is not recommended please add more number/word`
+    );
+  }
+};
 
+getPoint({ word, bonus });
 
 /*
 contoh 1,
