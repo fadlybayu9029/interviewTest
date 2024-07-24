@@ -1,7 +1,7 @@
 /*
 Censor Word Revealer
 kalian diminta untuk mengganti character !,@,#,$,% menjadi huruf vokal
-dengan syarat : 
+dengan syarat :
 - ! = a
 - @ = i
 - # = u
@@ -16,11 +16,31 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 
 */
 
-let word = 'h$ll% w%rld @dh!m'
-let output =""
+let word = "h$ll% w%rld @dh!m";
+let output = "";
 // tulis code kalian disini
 
+const transfromString = (data) => {
+  let str = "";
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] === "!") {
+      str += "a";
+    } else if (data[i] === "@") {
+      str += "i";
+    } else if (data[i] === "#") {
+      str += "u";
+    } else if (data[i] === "$") {
+      str += "e";
+    } else if (data[i] === "%") {
+      str += "o";
+    } else {
+      str += data[i];
+    }
+  }
+  return str;
+};
 
+console.log(transfromString(word));
 
 /*
 contoh 1,
