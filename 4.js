@@ -20,18 +20,54 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-
-
 let nama = "Eric";
 let kupon = 686001;
-let newkupon = kupon.toString()
-let hadiah = 0
-let angka0 = false
-let angka9 = false
+let newkupon = kupon.toString();
+// let hadiah = 0;
+// let angka0 = false;
+// let angka9 = false;
 // tulis code kalian disini
 
+const checker = (nama, newkupon) => {
+    let hadiah = 0;
+    let angka0 = false;
+    let angka9 = false;
+    for (x of newkupon.toString()) {
+        switch (x) {
+            case "0":
+                hadiah += 100000;
+                angka0 = true;
+                break;
+            case "9":
+                hadiah += 200000;
+                angka9 = true;
+                break;
+        }
+    }
 
+    if (angka0 && angka9)
+        return `${nama}, Selamat kamu mendapatkan Kitchen Set`;
+    if (!angka0 && !angka9) return `Maaf, Anda belum beruntung!`;
+    return `${nama}, Selamat ya kamu mendapatkan voucher belanja senilai Rp ${hadiah}`;
+};
+// console.log(checker(nama, newkupon));
 
+let nama1 = "Eric";
+let kupon1 = 6860091;
+
+let nama2 = "Eric";
+let kupon2 = 4464646443;
+
+let nama3 = "Eric";
+let kupon3 = 23314000;
+
+let nama4 = "Eric";
+let kupon4 = 999111;
+
+console.log(checker(nama1, kupon1));
+console.log(checker(nama2, kupon2));
+console.log(checker(nama3, kupon3));
+console.log(checker(nama4, kupon4));
 /*
 
 Contoh 1:

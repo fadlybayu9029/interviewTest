@@ -34,12 +34,39 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let word = '13px@!'
-let bonus = '1'
-let jumlah = 0
-let jumlah1 = 0
+let word = "13px@!";
+let bonus = "1";
+let jumlah = 0;
+let jumlah1 = 0;
 
+const checker = (text, bonus) => {
+    finalScore = 0;
+    for (x of text) {
+        if (bonus.includes(x)) finalScore += 10;
+        if (!bonus.includes(x) && Number(x)) finalScore += Number(x);
+    }
 
+    if (finalScore > 50)
+        return `wow u got total ${finalScore} mean that string is highly recommended for security`;
+    if (finalScore > 25)
+        return `wow u got total ${finalScore} mean that string is recommended for security but need more number/word for perfect security`;
+    if (finalScore <= 25)
+        return `you got ${finalScore} this mean string is not recommended please add more number/word`;
+    return finalScore;
+};
+
+let word1 = "1234129as@123p";
+let bonus1 = "asp";
+
+let word2 = "13px@!";
+let bonus2 = "1";
+
+let word3 = "13px@!";
+let bonus3 = "1px";
+
+console.log(checker(word1, bonus1));
+console.log(checker(word2, bonus2));
+console.log(checker(word3, bonus3));
 
 /*
 contoh 1,
