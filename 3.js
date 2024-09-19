@@ -16,11 +16,37 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 
 */
 
-let word = 'h$ll% w%rld @dh!m'
-let output =""
+let word = "h$ll% w%rld @dh!m";
+let output = "";
 // tulis code kalian disini
+function wordRevealer(word) {
+  for (let i = 0; i < word.length; i++) {
+    switch (word[i]) {
+      case "!":
+        output += "a";
+        break;
+      case "@":
+        output += "i";
+        break;
+      case "#":
+        output += "u";
+        break;
+      case "$":
+        output += "e";
+        break;
+      case "%":
+        output += "o";
+        break;
 
+      default:
+        output += word[i];
+        break;
+    }
+  }
+  console.log(output)
+}
 
+wordRevealer(word);
 
 /*
 contoh 1,
