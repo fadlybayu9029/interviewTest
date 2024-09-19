@@ -34,12 +34,41 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 ** untuk contoh case dapat di lihat di bawah
 */
 
-let word = '13px@!'
-let bonus = '1'
-let jumlah = 0
-let jumlah1 = 0
+let word = "1234129as@123p";
+let bonus = "asp";
+let jumlah = 0;
+let jumlah1 = 0;
 
+for (let i = 0; i < word.length; i++) {
+  let flag = false;
+  for (let j = 0; j < bonus.length; j++) {
+    if (bonus[j] === word[i]) {
+      jumlah += 10;
+      flag = true;
+    } else {
+      continue;
+    }
+  }
+  if (!flag) {
+    if (!isNaN(Number(word[i]))) {
+      jumlah += Number(word[i]);
+    }
+  }
+}
 
+if (jumlah > 50) {
+  console.log(
+    `wow u got total ${jumlah} mean that string is highly recommended for security`
+  );
+} else if (jumlah > 25) {
+  console.log(
+    `wow u got total ${jumlah} mean that string is recommended for security but need more number/word for perfect security`
+  );
+} else {
+  console.log(
+    `you got ${jumlah} this mean string is not recommended please add more number/word`
+  );
+}
 
 /*
 contoh 1,

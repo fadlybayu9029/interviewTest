@@ -18,8 +18,39 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 */
 
 let pinSuami = "34&%67@13";
+// let pinSuami = "87&%67@3";
+// let pinSuami = 122333;
 
 // tulis code kalian disini
+// let count = 0
+// for (let i = 0; i < pinSuami.length; i++) {
+//   if (!isNaN(Number(pinSuami[i]))) {
+//     count++
+//   }
+// }
+// if (pinSuami.length < 6) {
+//   console.log(`Nomor PIN ${pinSuami} tidak valid!`);
+// } else if (!isNaN(Number(pinSuami))) {
+//   console.log("Bukan pin suami ah!");
+// } else {
+//   console.log(`Good, Nomor PIN ${pinSuami} valid!`);
+// }
+
+if (!isNaN(Number(pinSuami))) {
+  console.log("Bukan pin suami ah!");
+} else {
+  let count = 0;
+  for (let i = 0; i < pinSuami.length; i++) {
+    if (!isNaN(Number(pinSuami[i]))) {
+      count++;
+    }
+  }
+  if (count === 6) {
+    console.log(`Good, Nomor PIN ${pinSuami} valid!`);
+  } else {
+    console.log(`Nomor PIN ${pinSuami} tidak valid!`);
+  }
+}
 
 /*
 
