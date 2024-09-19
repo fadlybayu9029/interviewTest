@@ -50,7 +50,7 @@ const checker = (text, bonus) => {
         return `wow u got total ${finalScore} mean that string is highly recommended for security`;
     if (finalScore > 25)
         return `wow u got total ${finalScore} mean that string is recommended for security but need more number/word for perfect security`;
-    if (finalScore < 25)
+    if (finalScore <= 25)
         return `you got ${finalScore} this mean string is not recommended please add more number/word`;
     return finalScore;
 };
