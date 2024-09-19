@@ -20,7 +20,33 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 let pinSuami = "34&%67@13";
 
 // tulis code kalian disini
+const pinValidation = (pin) => {
+    let number = "";
+    isAllNumber = true;
 
+    // check if all is number
+    for (x of pin.toString()) if (!Number(x)) isAllNumber = false;
+    if (isAllNumber) return "Bukan pin suami ah!";
+
+    // only get the number value
+    for (x of pin.toString()) {
+        if (Number(x)) number += x;
+    }
+
+    // check if the pin is match for the digit rules
+    if (number.length < 6 || number.length > 6)
+        return `Nomor PIN ${pin} tidak valid!`;
+
+    if (number.length === 6) return `Good, Nomor PIN ${pin} valid!`;
+};
+
+let pinSuami1 = "87&%67@3";
+let pinSuami2 = 122333;
+let pinSuami3 = "suami1";
+
+console.log(pinValidation(pinSuami)); //Good, Nomor PIN 346713 valid!
+console.log(pinValidation(pinSuami1)); //Nomor PIN 87&%67@3 tidak valid!
+console.log(pinValidation(pinSuami2)); //Bukan pin suami ah!
 /*
 
 output: "Good, Nomor PIN 346713 valid!"
