@@ -20,7 +20,24 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 let pinSuami = "34&%67@13";
 
 // tulis code kalian disini
+function pinStrength(pin){
+    let isNumber = false;
+    for(digit of pin){
+        if (typeof Number(digit) !== 'number') {
+            isNumber = true
+        }        
+    }
+    if (isNumber) {
+        return "Bukan pin suami ah!"        
+    }
+    if (pin.length === 6) {
+        return `Good, Nomor PIN [${pin}] valid!`
+    } else {
+        return `Nomor PIN [${pin}] tidak valid!`
+    }
+}
 
+console.log(pinStrength(pinSuami))
 /*
 
 output: "Good, Nomor PIN 346713 valid!"
