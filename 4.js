@@ -25,11 +25,33 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 let nama = "Eric";
 let kupon = 686001;
 let newkupon = kupon.toString()
-let hadiah = 0
+// let hadiah = 0
 let angka0 = false
 let angka9 = false
 // tulis code kalian disini
+function checkVoucher(nama, kupon){
+    let is0 = false;
+    let is9 = false;
+    let hadiah = 0;
+    for(char of kupon.toString()){
+        switch (char) {
+            case "0":
+                hadiah += 100000;
+                is0 = true;
+            case "9":
+                hadiah += 200000;
+                is9 = true;
+        }
+    }
 
+    if (is0 && is9) {
+        return `Selamat ${nama} mendapatkan Kitchen set, Voucher anda  ${hadiah}`
+    } else if (!is0 && !is9) {
+        return `Maaf ${nama} anda belum beruntung`
+    }     
+}
+
+console.log(checkVoucher(nama, newkupon))
 
 
 /*

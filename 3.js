@@ -19,8 +19,35 @@ Buatlah Algoritma dan Implemetasi Javascriptnya!
 let word = 'h$ll% w%rld @dh!m'
 let output =""
 // tulis code kalian disini
+function changeChar(word){
+    let result = "";
+    for(char of word){
+        switch (char) {
+            case "!":
+                result = result + "a"
+                break;
+            case "@":
+                result = result + "i"
+                break;
+            case "#":
+                result = result + "u"
+                break;
+            case "$":
+                result = result + "e"
+                break;
+            case "%":
+                result = result + "o"
+                break;
+        
+            default:
+                result = result + char
+                break;
+        }
+    }
+    return result;
+}
 
-
+console.log(changeChar(word))
 
 /*
 contoh 1,
